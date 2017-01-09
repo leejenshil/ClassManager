@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ClassManager</string>
+    <string name="test">get</string>
+    <string name="test2">set</string>
+</resources>
