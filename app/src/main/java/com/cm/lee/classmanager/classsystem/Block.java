@@ -6,10 +6,10 @@ package com.cm.lee.classmanager.classsystem;
 public class Block {
 
     public int length;
-    public boolean type;
+    public String name;
 
-    public Block(int length, boolean type) {
-        this.type = type;
+    public Block(int length, String name) {
+        this.name = name;
         this.length = length;
     }
 
