@@ -10,39 +10,23 @@ public class CSystem {
     private static final String TAG = "CSystem";
 
     public final Block[] dayArray;
-    public final Period[] perArray;
     public int index;
 
     public int timeTillNext;
     public String currentBlock;
 
-    public CSystem(Block[] dayArray, Period[] perArray) {
+    public CSystem(Block[] dayArray) {
         this.dayArray = dayArray;
-        this.perArray = perArray;
     }
 
-    public void GetNumOfPer() {
+    /*public void GetNumOfPer() {
         index = 0;
         for (int x = 0; x >= dayArray.length; x++) {
-            if (dayArray[x].type) {
+            if (dayArray[x].name != "break") {
                 index++;
             }
         }
-    }
-
-    public int lockUpClass(int nblock) {
-        int nPeriod = 0;
-        Log.i(TAG, "nblock: " + nblock);
-        for (int x = 0; x < (nblock); x++) {
-            Log.i(TAG, "nblock: " + nblock + " x: " + x);
-            if (dayArray[x].type) {
-                Log.w(TAG, "passed, " + x);
-                nPeriod++;
-            }
-        }
-        Log.w(TAG, "period: " + nPeriod);
-        return nPeriod;
-    }
+    }*/
 
     public void checkCurrent(int currentT) {
         int t = 8 * 60;
@@ -53,12 +37,7 @@ public class CSystem {
             Log.i(TAG, "checking time, " + t + ", " + x);
             if (currentT < t) {
                 timeTillNext = t - currentT;
-                if (dayArray[x].type == true) { //if there is a Period on
-                    Log.i(TAG, "nblock: " + x);
-                    currentBlock = perArray[lockUpClass(x)].name;
-                } else {
-                    currentBlock = "break";
-                }
+                currentBlock = dayArray[x].name;
                 break;
             }
         }
